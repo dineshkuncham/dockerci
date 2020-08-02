@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 ENV PATH /usr/src/app/node_modules/.bin:$path
 
-COPY package*.json ./
+COPY package*.json /usr/src/app
 
 RUN npm install
 

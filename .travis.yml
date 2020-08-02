@@ -4,3 +4,13 @@ services:
 script:
     - docker build -t dineshkuncham/node .
     - docker images dineshkuncham/node
+
+
+before_deploy:
+    - docker login -u dineshkuncham -p Mt675ackWFp7zZv
+
+deploy:
+    provider: script
+    script: docker push dineshkuncham/node
+    on:
+        branch:master 

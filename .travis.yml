@@ -4,3 +4,14 @@ services:
 script:
     - docker build -t dineshkuncham/node .
     - docker images dineshkuncham/node
+
+#  runs before deploying
+# to push replace username and password with your credentials
+before_deploy:
+    - docker login -u <username> -p <password>
+
+deploy:
+    provider: script
+    script: docker push dineshkuncham/node
+    on:
+        branch: master 

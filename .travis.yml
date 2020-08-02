@@ -13,4 +13,4 @@ deploy:
     provider: script
     script: docker push dineshkuncham/node
     on:
-        branch:master 
+        branch: master 
